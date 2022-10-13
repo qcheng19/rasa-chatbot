@@ -1,0 +1,69 @@
+version: "3.1"
+stories:
+
+- story: 询问用户名
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_name
+  - intent: username
+  - slot_was_set:
+    - username: username
+  - action: action_determine_new_user
+  - action: utter_inquiry_facility
+
+- story: 投诉
+  steps:
+  - intent: complaint 
+  - action: utter_complaint_car_name
+  - intent: choose_car
+  - slot_was_set:
+    - car_name: car_name
+  - action: utter_complaint
+
+- story: 车辆救援
+  steps:
+  - intent: car_breakdown 
+  - action: utter_car_breakdown
+  - intent: input_car_breakdown
+  - slot_was_set:
+    - car_address: car_address
+  - action: car_break_form
+  - action: utter_ask_manager
+  - checkpoint: artificial_dress_checkpoint
+
+- story: 售后
+  steps:
+  - intent: after_feedback 
+  - action: utter_after_feedback
+  - intent: input_after_feedback
+  - slot_was_set:
+    - car_feedback: car_feedback
+  - action: car_feedback_form
+  - action: utter_ask_manager
+  - checkpoint: artificial_dress_checkpoint
+
+- story: 租车
+  steps:
+  - intent: rental_car
+  - action: action_ask_car_name
+  - intent: choose_car
+  - slot_was_set:
+    - car_name: car_name
+  - action: get_car_name
+  - action: utter_ask_manager
+  - checkpoint: artificial_dress_checkpoint
+
+- story: Turn to the artificial
+  steps:
+  - checkpoint: artificial_dress_checkpoint
+  - intent: affirm
+  - action: utter_manager_num
+  - action: utter_goodbye
+
+- story: 不联系主管
+  steps:
+  - checkpoint: artificial_dress_checkpoint
+  - intent: deny
+  - action: utter_goodbye
+

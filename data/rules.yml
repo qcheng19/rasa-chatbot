@@ -1,0 +1,23 @@
+version: "3.1"
+
+rules:
+# 用户输入goodbye的时候，直接goodbye
+- rule: handle user goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+# 用户询问能干啥的时候，列出功能
+- rule: what to do
+  steps:
+  - intent: whattodo
+  - action: utter_whattodo
+# 如果说脏话，直接goodbye
+- rule: fuck
+  steps:
+  - intent: fuck
+  - action: utter_fuck
+# 面临机器人挑战的时候
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

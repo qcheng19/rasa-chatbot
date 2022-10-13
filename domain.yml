@@ -1,0 +1,145 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - rental_car 
+  - username
+  - choose_car
+  - affirm
+  - deny
+  - complaint
+  - car_breakdown
+  - after_feedback
+  - bot_challenge
+  - whattodo
+  - fuck
+  - input_car_breakdown
+  - input_after_feedback
+
+
+entities:
+  - username
+  - car_name
+  - car_feedback
+  - car_address
+
+slots:
+  username:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: username
+  car_feedback:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: car_feedback
+  car_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: car_name
+  car_address:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: car_address
+
+forms:
+  car_feedback_form:
+    required_slots:
+    - car_name
+    - car_feedback
+  car_break_form:
+    required_slots:
+    - car_name
+    - car_address
+
+responses:
+  utter_greet:
+    - text: "Welcome to the car rental system!\n1. Business hours: 8 a.m. to 5 p.m\n2. Store address: Longmian Avenue, Tianyin Avenue\nHey! What can help you?"
+      image: "http://101.34.205.177/img/rasa_hello.JPG"
+  utter_ask_intent:
+    - text: "Can I help you?"
+  utter_ask_name:
+    - text: "what is your name?"
+  utter_complaint:
+    - text: "what is your complaint?"
+      buttons:
+      - title: "Vehicle Problem Complaint"
+        payload: /after_feedback
+      - title: "Vehicle failure"
+        payload: /car_breakdown
+  utter_car_breakdown:
+    - text: "ok you can input your address:"
+  utter_after_feedback: 
+    - text: "ok you can input your feedback:" 
+  utter_ask_manager:
+    - text: "ok do you want to talk to manager?"
+  utter_ask_end:
+    - text: "ok do you want to end?"
+  utter_manager_num:
+    - text: "you can call 13696323828"
+      image: "http://101.34.205.177/img/rasa_manager.JPG"
+  utter_goodbye:
+    - text: "good bye"
+      image: "http://101.34.205.177/img/rasa_goodbye.JPG"
+  utter_cannot_understand:
+    - text: "I can not understand your."
+  utter_ask_feedback:
+    - text: "Did it help you?"
+  utter_thank_you:
+    - text: "thank you hhhh"
+  utter_anything_else:
+    - text: "anything else?"
+  utter_whattodo:
+    - text: "I can help you rent a car and solve your car problems"
+  utter_fuck:
+    - text: "emmm, bye"
+      image: "http://101.34.205.177/img/rasa_fuck.JPG"
+  utter_iamabot:
+    - text: "I am a bot powered by Chengqihao"
+      image: "http://101.34.205.177/img/rasa_p1.png"
+  utter_ask_car:
+    - text: "please input your car name!"
+  utter_inquiry_facility:
+    - text: "Please select your business?"
+      buttons:
+      - title: "complaint"
+        payload: /complaint
+      - title: "car rental"
+        payload: /rental_car 
+  utter_complaint_car_name:
+    - text: "please input your car name!"
+actions:
+  - action_determine_new_user
+  - car_feedback_form
+  - car_break_form
+  - action_ask_car_name
+  - get_car_name
+  - utter_greet
+  - utter_ask_intent
+  - utter_ask_name
+  - utter_complaint
+  - utter_car_breakdown
+  - utter_after_feedback
+  - utter_ask_manager
+  - utter_ask_end
+  - utter_manager_num
+  - utter_goodbye
+  - utter_cannot_understand
+  - utter_ask_feedback
+  - utter_thank_you
+  - utter_inquiry_facility
+  - utter_complaint_car_name
+  - utter_fuck
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,182 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: rental_car 
+  examples: |
+    - I want to rent a car
+    - What are your rental packages?
+    - What is the cost of your rental car?
+    - How to calculate the cost of car rental?
+- intent: username
+  examples: |
+    - My name is [jack](username)
+    - My name is [luck](username)
+    - My name is [mark](username)
+    - My name is [bark](username)
+    - My name is [shit](username)
+    - My name is [chengqihao](username)
+    - My name is [panqifeng](username)
+    - My name is [jack fuck](username)
+    - My name is [jack ma](username)
+    - I am [jack](username)
+    - I am [luck](username)
+    - I am [mark](username)
+    - I am [shit](username)
+    - I am [chengqihao](username)
+    - I am [panqifeng](username)
+    - I am [jack fuck](username)
+    - I am [jack ma](username)
+    - You can address me as [jack](username)
+    - You can address me as [luck](username)
+    - You can address me as [mark](username)
+    - You can address me as [shit](username)
+    - You can address me as [chengqihao](username)
+    - You can address me as [panqifeng](username)
+    - You can address me as [jack fuck](username)
+    - You can address me as [jack ma](username)
+- intent: choose_car
+  examples: |
+    - The name of the car is [BMW](car_name)
+    - The name of the car is [Mercedes](car_name)
+    - The name of the car is [Rolls-Royce](car_name)
+    - The name of the car is [Audi](car_name)
+    - The name of the car is [Ferrari](car_name)
+    - The name of the car is [Bugatti](car_name)
+    - The name of the car is [Lamborghini](car_name)
+    - [BMW](car_name)
+    - [Mercedes](car_name)
+    - [Rolls-Royce](car_name)
+    - [Audi](car_name)
+    - [Ferrari](car_name)
+    - [Bugatti](car_name)
+    - [Lamborghini](car_name)
+    - I want [BMW](car_name)
+    - I want [Mercedes](car_name)
+    - I want [Rolls-Royce](car_name)
+    - I want [Audi](car_name)
+    - I want [Ferrari](car_name)
+    - I want [Bugatti](car_name)
+    - I want [Lamborghini](car_name)
+    - I want [BMW](car_name), please
+    - I want [Mercedes](car_name), please
+    - I want [Rolls-Royce](car_name), please
+    - I want [Audi](car_name), please
+    - I want [Ferrari](car_name), please
+    - I want [Bugatti](car_name), please
+    - I want [Lamborghini](car_name), please
+    - I prefer [BMW](car_name)
+    - I prefer [Mercedes](car_name)
+    - I prefer [Rolls-Royce](car_name)
+    - I prefer [Audi](car_name)
+    - I prefer [Ferrari](car_name)
+    - I prefer [Bugatti](car_name)
+    - I prefer [Lamborghini](car_name)
+    - Please rent me a [BMW](car_name)
+    - Please rent me a [Mercedes](car_name)
+    - Please rent me a [Rolls-Royce](car_name)
+    - Please rent me a [Audi](car_name)
+    - Please rent me a [Ferrari](car_name)
+    - Please rent me a [Bugatti](car_name)
+    - Please rent me a [Lamborghini](car_name)
+- intent: complaint
+  examples: |
+    - I want to complain about a problem
+    - Complaints
+    - I have a problem with my car
+    - My car has broken down
+- intent: input_car_breakdown
+  examples: |
+    - [njit](car_address)
+    - [tijn](car_address)
+- intent: input_after_feedback
+  examples: |
+    - [kongtiaohuaile](car_feedback)
+    - [xainshipinghuaile](car_feedback)
+- intent: after_feedback
+  examples: |
+    - I want to give feedback
+    - feedback
+- intent: car_breakdown
+  examples: |
+    - My car breakdown
+    - My car breaks
+- intent: whattodo
+  examples: |
+    - What can you do
+    - What features do you have
+    - What can you do for me
+    - What's your use
+- intent: fuck
+  examples: |
+    - fuck
+    - Damn it
+    - Holy fuck
+    - Fuck it
+    - What the fuck
+    - shut up
+    - Fuck off
+    - holy shit
+    - kiss my ass
+    - you mother fucker
+    - you son of a bitch
+    - go fuck yourself
+    - Bullshit
+    - Who do you think you are
+    - You’re a jerk
+    - I don’t want to see your face
+    - You make me sick
+# - synonym: name   
+#   examples: |     
+#   - username    
+#   - name
+#   - account
